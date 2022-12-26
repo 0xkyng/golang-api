@@ -7,3 +7,9 @@ type book struct{
 	Author string    `json:"author"`
 	Quantity int     `json:"quantity"`
 }
+var books = []book{
+	{ID: "1", Title: "Landing your first remot job", Author: "Isaac", Quantity: 5},
+	{ID: "2", Title: "Working with FANG", Author: "codekyng", Quantity: 4},
+	{ID: "3", Title: "Transitioning to tech", Author: "Izik", Quantity: 10},
+
+}

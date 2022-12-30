@@ -7,6 +7,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// book struct
 type book struct {
 	ID       string `json:"id"`
 	Title    string `json:"title"`

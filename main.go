@@ -15,6 +15,7 @@ type book struct {
 	Quantity int    `json:"quantity"`
 }
 
+// Slice of books
 var books = []book{
 	{ID: "1", Title: "Landing your first remot job", Author: "Isaac", Quantity: 5},
 	{ID: "2", Title: "Working with FANG", Author: "codekyng", Quantity: 4},

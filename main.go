@@ -31,7 +31,7 @@ func getBooks(context *gin.Context) {
 	// Gin.context contains all the information about the incoming request
    // It allows you to return a response
 	context.IndentedJSON(http.StatusOK, books) // Transform the data from the request
- // And return it as nicely formatted json that's properly indented
+  // And return it as nicely formatted json that's properly indented
 }
 //////////////////////////////////////
 
@@ -116,15 +116,17 @@ func addBook(context *gin.Context) {
 	// Get the data of the new book to be added from the request
 	var newBook book
 
-	// Bind the json from the
-	// newBook to the book struct
+	// Bind the json from the request body
+	// To the newBook with book type
 	err := context.BindJSON(&newBook)
 	if err != nil{
 		return
 	}
 
+	// Add the newBook to the books list
 	books = append(books, newBook)
 
+	// Return the newBook
 	context.IndentedJSON(http.StatusCreated, newBook)
 }
 ////////////////////////////////////

@@ -24,6 +24,8 @@ var books = []book{
 
 /////////////////////////////////////
 // GET Method
+// getBooks handles the route of getting
+// All the different books
 func getBooks(context *gin.Context) {
 	context.IndentedJSON(http.StatusOK, books)
 }
@@ -120,6 +122,7 @@ func addBook(context *gin.Context) {
 
 
 func main() {
+	// Set up router
 	router := gin.Default()
 	router.GET("/books", getBooks)
 	router.GET("/books/:id", bookById)

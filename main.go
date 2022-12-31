@@ -26,11 +26,12 @@ var books = []book{
 // GET Method
 // getBooks handles the route of getting
 // All the different books
+
 func getBooks(context *gin.Context) {
-	// Gin context contains all the information about a request
-	// It allows you to return a response
-	context.IndentedJSON(http.StatusOK, books)
-	//nicely formatted json that's properly indented
+	// Gin.context contains all the information about the incoming request
+   // It allows you to return a response
+	context.IndentedJSON(http.StatusOK, books) // Transform the data from the request
+ // And return it as nicely formatted json that's properly indented
 }
 //////////////////////////////////////
 
@@ -111,8 +112,12 @@ func returnBook(context *gin.Context) {
 // POST Method
 // End point for adding a book to list of books 
 func addBook(context *gin.Context) {
+	// Firt create a new book
+	// Get the data of the new book to be added from the request
 	var newBook book
 
+	// Bind the json from the
+	// newBook to the book struct
 	err := context.BindJSON(&newBook)
 	if err != nil{
 		return

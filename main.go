@@ -109,6 +109,7 @@ func returnBook(context *gin.Context) {
 
 ////////////////////////////////////
 // POST Method
+// End point for adding a book to list of books 
 func addBook(context *gin.Context) {
 	var newBook book
 

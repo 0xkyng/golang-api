@@ -27,7 +27,10 @@ var books = []book{
 // getBooks handles the route of getting
 // All the different books
 func getBooks(context *gin.Context) {
+	// Gin context contains all the information about a request
+	// It allows you to return a response
 	context.IndentedJSON(http.StatusOK, books)
+	//nicely formatted json that's properly indented
 }
 //////////////////////////////////////
 

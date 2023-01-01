@@ -40,7 +40,10 @@ func getBooks(context *gin.Context) {
 // getBookById iterates over the books slice
 // And finds the book with the specified id
 func getBookById(id string) (*book, error) {
+	//Range through the books
 	for i, b := range books{
+	// Check if the book id matches
+	// The id from request
 		if b.ID == id {
 			return &books[i], nil
 		}

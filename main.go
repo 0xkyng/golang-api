@@ -52,7 +52,7 @@ func getBookById(id string) (*book, error) {
 }
 
 func bookById(context *gin.Context) {
-	// Get the id from the path parameter
+	// Get the book id from the path parameter
 	id := context.Param("id")
 	// call getBookById
 	book, err := getBookById(id)
@@ -62,6 +62,7 @@ func bookById(context *gin.Context) {
 		return
 	}
 
+	// Retun the book
 	context.IndentedJSON(http.StatusOK, book)
 
 }
@@ -70,6 +71,7 @@ func bookById(context *gin.Context) {
 /////////////////////////////////////////
 // Checkout book
 func checkOutBook(context *gin.Context) {
+	// Accept query parameter
 	id, ok := context.GetQuery("id")
 
 	if !ok {
